@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
   </head>
   <body>
     <h1>Weather App</h1>
@@ -13,14 +17,19 @@
       <input type="text" required id="inp" />
       <button>search</button>
     </form>
-
-    <p class="show-weather"></p>
-    <p class="show-humidity"></p>
-    <p class="show-rain-chance"></p>
-    <p class="show-heat"></p>
-    <p class="show-weather"></p>
-    <p class="show-weather"></p>
-    <p class="show-weather"></p>
+    <div class="weather-container">
+      <p class="show-weather"></p>
+      <p class="show-humidity"></p>
+      <p class="show-rain-chance"></p>
+      <p class="show-heat"></p>
+      <p class="show-cloud"></p>
+      <p class="show-country">
+        <i class="fa-solid fa-flag"></i>
+      </p>
+      <p class="show-city">
+        <i class="fa-solid fa-location-dot"></i>
+      </p>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios@1.17.0/dist/axios.min.js"></script>
     <script src="ecmascript.js"></script>

@@ -1,0 +1,253 @@
+/* ================================
+   BASIC RESET
+================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================================
+   BODY / PAGE BACKGROUND
+================================ */
+
+body {
+  min-height: 100vh;
+
+  /* Sky type background */
+  background: linear-gradient(135deg, #87ceeb, #e0f7ff);
+
+  font-family: Arial, sans-serif;
+
+  /* Center the weather card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 50px 20px;
+}
+
+/* ================================
+   MAIN HEADING
+================================ */
+
+h1 {
+  color: #123a6b;
+  font-size: 42px;
+  margin-bottom: 30px;
+
+  /* Heading ko thora attractive banane ke liye */
+  text-align: center;
+}
+
+/* ================================
+   SEARCH FORM
+================================ */
+
+form {
+  width: 100%;
+  max-width: 650px;
+
+  display: flex;
+  gap: 12px;
+
+  margin-bottom: 30px;
+}
+
+/* ================================
+   SEARCH INPUT
+================================ */
+
+#inp {
+  flex: 1;
+
+  padding: 16px 20px;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 17px;
+
+  outline: none;
+
+  background-color: white;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Input par click karne par */
+
+#inp:focus {
+  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.25);
+}
+
+/* ================================
+   SEARCH BUTTON
+================================ */
+
+button {
+  padding: 16px 28px;
+
+  border: none;
+  border-radius: 12px;
+
+  background-color: #1976d2;
+  color: white;
+
+  font-size: 17px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+/* Button hover */
+
+button:hover {
+  background-color: #125ca8;
+
+  transform: translateY(-2px);
+}
+
+/* ================================
+   WEATHER CONTAINER
+================================ */
+
+.weather-container {
+  width: 100%;
+  max-width: 650px;
+
+  display: none;
+
+  /* 2 columns banengi */
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+}
+
+/* ================================
+   WEATHER INFORMATION
+================================ */
+
+/* Har <p> ko card ki tarah show karna */
+
+.show-weather,
+.show-humidity,
+.show-rain-chance,
+.show-heat,
+.show-cloud,
+.show-country,
+.show-city {
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  padding: 20px 25px;
+
+  margin-bottom: 12px;
+
+  border-radius: 15px;
+
+  color: #173b63;
+
+  font-size: 19px;
+  font-weight: bold;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+  /* Smooth animation */
+  transition: 0.3s;
+}
+
+/* ================================
+   HOVER EFFECT ON WEATHER CARDS
+================================ */
+
+.show-weather:hover,
+.show-humidity:hover,
+.show-rain-chance:hover,
+.show-heat:hover,
+.show-cloud:hover,
+.show-country:hover,
+.show-city:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.show-weather::before {
+  content: " 🌡️ ";
+}
+
+.show-humidity::before {
+  content: " 💧 ";
+}
+
+.show-rain-chance::before {
+  content: " 🌧️ ";
+}
+
+.show-heat::before {
+  content: " 🔥 ";
+}
+
+.show-cloud::before {
+  content: " ☁️ ";
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   Mobile screens
+================================ */
+
+@media (max-width: 600px) {
+  body {
+    padding: 30px 15px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  /* Mobile par input aur button
+     ek ke neeche ek aa jayenge */
+
+  form {
+    flex-direction: column;
+  }
+
+  #inp {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .weather-container {
+    display: none;
+  }
+  /* ================================
+   MOBILE RESPONSIVE
+ ================================ */
+
+  .weather-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Mobile par weather text */
+
+  .show-weather,
+  .show-humidity,
+  .show-rain-chance,
+  .show-heat,
+  .show-cloud,
+  .show-country,
+  .show-city {
+    font-size: 17px;
+
+    padding: 17px 20px;
+  }
+}
