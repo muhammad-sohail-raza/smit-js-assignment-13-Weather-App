@@ -17,7 +17,9 @@ body {
 
   /* Sky type background */
   background: linear-gradient(135deg, #87ceeb, #e0f7ff);
-
+  /* background-position: center; */
+  background-size: cover;
+  /* background-position-x: right; */
   font-family: Arial, sans-serif;
 
   /* Center the weather card */
@@ -26,8 +28,34 @@ body {
   align-items: center;
 
   padding: 50px 20px;
+  /* transition: background 1s ease; */
+
+  animation: zoomBackground 10s ease-in-out infinite alternate;
 }
 
+@keyframes zoomBackground {
+  from {
+    background-size: 100%;
+  }
+
+  to {
+    background-size: 110%;
+  }
+}
+
+body {
+  animation: fadeBackground 1s ease;
+}
+
+@keyframes fadeBackground {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 /* ================================
    MAIN HEADING
 ================================ */
@@ -37,7 +65,7 @@ h1 {
   font-size: 42px;
   margin-bottom: 30px;
 
-  /* Heading ko thora attractive banane ke liye */
+  /* /* Heading ko thora attractive banane ke liye */
   text-align: center;
 }
 
